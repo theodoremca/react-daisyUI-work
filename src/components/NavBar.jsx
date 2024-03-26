@@ -1,6 +1,6 @@
 export const NavBar =()=>{
     return (
-<div className="navbar bg-gradient-to-b from-[#4CC9F000] to-[#4361EE70] text-white h-[902px]">
+<div className="navbar bg-gradient-to-b from-[#4CC9F000] to-[#4361EE70] text-white ">
   <div className="flex-1">
     <a className="btn btn-ghost text-xl">daisyUI</a>
   </div>

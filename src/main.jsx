@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 // import { ClassWork } from './pages/ClassWork'
 // import { ClassWorkTwo } from './pages/ClassWorkTwo'
-import { ClassWorkThree } from './pages/ClassWorkThree'
+// import { ClassWorkThree } from './pages/ClassWorkThree'
+// import { ClassWorkFour } from './pages/ClassWorkFour'
+// import { ClassWorkFive } from './pages/ClassWorkFive'
+import { ClassWorkSix } from './pages/ClassWorkSix'
 // import { App } from './App'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -11,7 +14,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
    {/* <App/> */}
 {/* <ClassWork/> */}
 {/* <ClassWorkTwo/> */}
-<ClassWorkThree/>
+{/* <ClassWorkThree/> */}
+{/* <ClassWorkFour/> */}
+{/* <ClassWorkFive/> */}
+<ClassWorkSix/>
   </React.StrictMode>,
 
 )
