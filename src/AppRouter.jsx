@@ -10,6 +10,7 @@ import { ClassWorkTwo } from "./pages/ClassWorkTwo";
 import { ClassWorkThree } from "./pages/ClassWorkThree";
 import { WorkinigWithAPIArray } from "./pages/WorkingWithAPIArray";
 import { WorkinigWithAPI } from "./pages/WorkingWithAPI";
+import { AxiosPageApi } from "./pages/AxiosPageApi";
 
 export const BrowserRouterApp = () =>{
   return (
@@ -52,8 +53,9 @@ const router = createBrowserRouter([
   { path: "/", element: <WorkinigWithAPIArray /> },
   { path: "/thief", element: <ClassWorkTwo /> },
   { path: "/class-work-3", Component: ClassWorkThree },
+  { path: "/axois-forever", Component: AxiosPageApi },
 ]);
 
 export const RouterProviderApp = () => {
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router}/>;
 };

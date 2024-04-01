@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { dbDatas } from "./dt";
 import { GitUser } from "../components/workingWithApiArray/GitUser";
-
+import { FaBeer } from "react-icons/fa";
+import axios from 'axios';
 // const runners = ['chidi', "Engr Precilia", "Ikem"]
 // const [leader] =['chidi', "Engr Precilia"]
 // console.log({leader})
@@ -10,16 +11,23 @@ export const WorkinigWithAPIArray = () => {
   const [query, changeQuery] = useState("");
   const [isListView, changeisListView] = useState(false);
 
+
+
   return (
     <>
       <div className="flex flex-col  mb-10  space-y-4  sticky top-0  w-full z-10 bg-slate-950 py-10">
         <div className="flex gap-3 justify-center items-center px-10 ">
+<div className="flex  items-center w-full max-w-xs input input-bordered space-x-3">
+<div className="icon-container">
+      <FaBeer className="icon" />
+    </div>
           <input
             onChange={(e) => changeQuery(e.target.value)}
             type="text"
             placeholder="Search for User"
-            className="input input-bordered w-full max-w-xs"
+            className="  "
           />
+</div>
           <button className="btn">
             Liked Users
             <div className="badge">
