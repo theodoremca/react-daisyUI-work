@@ -1,49 +1,49 @@
 import { useState } from "react";
+import axios from "axios";
 
 export const ClassWorkTwo = () => {
-    
-    const [value, setValue] = useState(0);
-    const [name, changer] = useState('Theodore');
-    const [bgColor, changeBgColor] = useState("bg-blue-500");
+  const [name, changer] = useState("Theodore");
+  const [des, changeDes] = useState("Theodore");
+  const [com, changeCom] = useState(false);
 
-    const claraIncrement = () => {
-    let fValue = value;
-      if (fValue<= 10) {
-        fValue = fValue +1;
-        setValue(fValue);
-      }// 10 + 100 // 110 + 100`
-      if(fValue === 4) {
-        changeColor()
-      }
-    };
-    const changeName = ()=>{
-        changer(' Selem') 
-      }
+  const changeName = (e) => {
+    changer(e.target.value);
+  };
 
-      const changeColor = ()=>{
-        changeBgColor('bg-red-500') 
-      }
-  
+  const changeDescription = (e) => {
+    changeDes(e.target.value);
+  };
+  const changeCompleted = (e) => {
+    changeCom(e.target.value);
+  };
+
+  const addTodo = () => {
+    axios
+      .post("http://49.13.2.10:4000/todos/", {
+        name: name,
+        description: des,
+        completed: com,
+      })
+      .then((res) => {
+        console.log(res);
+        alert("success");
+      })
+      .then((err) => {
+        console.log(err);
+        alert("error");
+      });
+  };
+
   return (
     <>
-    <div className={bgColor}>
-        <div className="flex justify-center items-center h-screen "
-      >
-        <div className="flex flex-col items-center space-y-2">
-          <h1 className=" text-5xl font-bold">Classwork</h1>
-          {value >= 10 ? (
-            <p className=" text-3xl font-bold">Completed</p>
-          ) : (
-            <p className=" text-3xl font-bold">{value}</p>
-          )}
-          <button className="btn btn-neutral" onClick={claraIncrement}>
-            Counter {value}
-          </button>
-          <button className="btn btn-neutral" onClick={changeName}>Change Name: {name} </button>
-        </div>
+      <div>
+        <input type="text" onChange={changeName} />
+        <input type="text" onChange={changeDescription} />
+        <input type="checkbox" onChange={changeCompleted} />
+        <button onClick={addTodo} type="button">
+          sumbit
+        </button>
       </div>
-    </div>
-    
     </>
   );
 };
