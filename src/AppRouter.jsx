@@ -50,7 +50,7 @@ export const BrowserRouterWithMapApp = () =>{
 }
 
 const router = createBrowserRouter([
-  { path: "/", element: <WorkinigWithAPIArray /> },
+  { path: "/", element: <AxiosPageApi /> },
   { path: "/thief", element: <ClassWorkTwo /> },
   { path: "/class-work-3", Component: ClassWorkThree },
   { path: "/axois-forever", Component: AxiosPageApi },
